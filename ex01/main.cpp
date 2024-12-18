@@ -6,10 +6,41 @@
 
 int main()
 {
-const Animal* j = new Dog();
-const Animal* i = new Cat();
-delete j;//should not create a leak
-delete i;
+std::cout << "[.] Creating Animal array and Calling Constructors\n" << std::endl;
+	Animal *animal[20];
+	int	i = 0;
 
-return 0;
+	std::cout << std::endl;
+	std::cout << "[.] Filling the array" << std::endl;
+	std::cout << std::endl;
+	
+	while (i < 20)
+	{
+		if (i < 10)
+			animal[i] = new Dog();
+		else
+			animal[i] = new Cat();
+		++i;
+	}
+
+	std::cout << std::endl;
+	std::cout << "[.] Displaying Sounds\n" << std::endl;
+
+	i = 0;
+	while (i < 20)
+	{
+		animal[i]->makeSound();
+		++i;
+	}
+
+	std::cout << std::endl;
+	std::cout << "[.] Calling Destructors\n" << std::endl;
+
+	i = 0;
+	while (i < 20)
+	{
+		delete animal[i];
+		++i;
+	}
+	return 0;
 }

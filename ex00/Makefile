@@ -9,7 +9,7 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	$(CPP) $(CFLAGS) $(OBJS) -o $(NAME)
 
-%.o: %.cpp ClapTrap.hpp
+%.o: %.cpp Animal.hpp Cat.hpp Dog.hpp WrongCat.hpp WrongAnimal.hpp 
 	$(CPP) $(CFLAGS) -c $< -o $@
 
 clean:

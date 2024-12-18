@@ -1,3 +1,6 @@
+#ifndef _BRAIN_HPP_
+#define _BRAIN_HPP_
+
 #include "Brain.hpp"
 
 Brain::Brain()
@@ -27,3 +30,4 @@ Brain::~Brain()
 }
 
 
+#endif
